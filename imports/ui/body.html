@@ -1,0 +1,17 @@
+<body>
+  {{> navigation}}
+  <div class="container-fluid">
+    <header class="mHeader">
+      <h1>Todo List ({{incompleteCount}})</h1>
+    </header>
+    {{> formTask}}
+
+<span class="no-emoji"></span>
+    <!--      {{> loginButtons}} {{#if currentUser}} {{/if}}-->
+
+    <div class="clearfix"></div>
+    <ul class="list-group">
+      {{#each tasks}} {{> task}} {{/each}}
+    </ul>
+  </div>
+</body>
