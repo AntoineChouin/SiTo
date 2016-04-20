@@ -1,23 +1,28 @@
 <body>
-  
-    {{> navigation}}
-    <div class="container-fluid mainBody">
-      <header class="mHeader">
-        <h1>Todo List ({{incompleteCount}})</h1>
-      </header>
+
+  {{> navigation}}
+
+  <div class="container-fluid mainBody">
+    <header class="mHeader">
+      <h1>Todo List ({{incompleteCount}})</h1>
+    </header>
+
+    <div id="formtask">
       {{> formTask}}
 
-
-      <!--      {{> loginButtons}} {{#if currentUser}} {{/if}}-->
-
-      <div class="clearfix"></div>
-      <ul class="list-group">
-        {{#each tasks}} {{> task}} {{/each}}
-      </ul>
     </div>
-  
+
+
+
+    <!--      {{> loginButtons}} {{#if currentUser}} {{/if}}-->
+
+    <div class="clearfix"></div>
+    <ul class="list-group">
+      {{#each tasks}} {{> task}} {{/each}}
+    </ul>
+  </div>
+
 
   <script>
-   
   </script>
 </body>

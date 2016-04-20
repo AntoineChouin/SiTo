@@ -1,20 +1,25 @@
-import {Template} from 'meteor/templating';
-import {moment} from 'moment';
+import {
+  Template
+}
+from 'meteor/templating';
+import {
+  moment
+}
+from 'moment';
 
 //import { font-awesome } from 'font-awesome';
 //import { Tasks } from '../api/tasks.js';
 import './formTask.html';
 
-Template.formTask.events({
+Template.formTask.onRendered(function () {
 
-  'click .delete' () {
-    Tasks.remove(this._id);
-  },
-  'click #button': function (e) {
-    // Instead of using $(this), you can do:
-   alert("afd");
-    // Your usual code here, e.g.:
-    console.log("adfdfa");
-  }
-
+  $('.awesome-form input').focusout(function () {
+    var text_val = $(this).val();
+    if (text_val == '') {
+      $(this).removeClass('has-value');
+      console.log("This is working")
+    } else {
+      $(this).addClass('has-value');
+    }
+  });
 });

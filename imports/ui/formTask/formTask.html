@@ -1,23 +1,49 @@
 <template name="formTask">
   <div class="row ">
 
-    <div class="col-md-10 col-md-offset-1 awesome-form">
-      <h3>Formulaire d'ajout de tâches</h3>
-      <form class="new-task ">
-        <label for="">Insérez votre tâche : </label>
-        <input type="text" name="text" placeholder="" />
+    <div class="col-md-8  ">
+      <!--      <h3>Formulaire d'ajout de tâches</h3>-->
+      <form class="new-task awesome-form">
+        <section class="input-group">
+          <input type="text" class="addTask" />
+          <label class="formTitre">Insérez votre tâche </label>
+
+        </section>
 
       </form>
 
 
     </div>
+    <div class="col-md-4 ckbox">
+      <label class="hide-completed">
+        Masquer les tâches terminées
+        <input type="checkbox" class="checkbox" checked/>
+        <i></i>
+      </label>
+<!--
+      <label class="hide-completed">
+        <span class="">
+          <input type="checkbox" class="checkbox" /> Hide Completed Tasks
+       </span>
 
-
-
-    <!--
-    <label class="hide-completed col-md-2 pull-right">
-      <input type="checkbox" class="checkbox" /> Hide Completed Tasks
-    </label>
+      </label>
 -->
+
+    </div>
+
+
+
+
   </div>
+  <script>
+    //    $('.addTask').keydown(function () {
+    //      var contents = $(this).val();
+    //      var charlength = contents.length;
+    //      newwidth = charlength * 9;
+    //      $(this).css({
+    //        width: newwidth
+    //      });
+    //    });
+    console.log($(".addTask").width());
+  </script>
 </template>

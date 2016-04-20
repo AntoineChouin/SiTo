@@ -8,7 +8,6 @@ body {
   background-attachment: fixed;
   padding: 70px auto auto auto;
   font-size: 1.2em;
-  
 }
 
 .mHeader {
@@ -36,7 +35,6 @@ body {
     text-transform: uppercase;
     text-align: right;
     padding: 4px 15px 3px;
-    font-family: "ProximaNova-Semibold";
     margin-left: 17px;
     background-color: #464647;
   }
@@ -70,10 +68,6 @@ li {
   }
 }
 
-header .hide-completed {
-  float: right;
-}
-
 .toggle-private {
   margin-left: 5px;
 }
@@ -84,76 +78,147 @@ form {
   position: relative;
 }
 
-.new-task {
-  input {
-    box-sizing: border-box;
-    padding: 10px 0;
-    //  background: transparent;
-    //  border: none;
+//.new-task {
+//  input {
+//    box-sizing: border-box;
+//    padding: 10px 0;
+//    //  background: transparent;
+//    //  border: none;
+//    width: 100%;
+//    //  padding-right: 80px;
+//    font-size: 1em;
+//  }
+//  //  input:focus {
+//  //    outline: 0;
+//  //  }
+//}
+//http://codepen.io/ZheYeti/pen/bpKorQ?editors=1100
+#formtask {
+  .awesome-form {
+    /*   margin:20% auto 0 auto; */
+    padding: 20px;
     width: 100%;
-    //  padding-right: 80px;
-    font-size: 1em;
-  }
-  //  input:focus {
-  //    outline: 0;
-  //  }
-}
-
-// insipirée de http://codepen.io/ZheYeti/pen/qZpeYj
-.awesome-form {
-  padding: 20px;
-  //  margin:20% auto 0 auto;
-  height: auto;
-  overflow: hidden;
-  background: #f9f9f9;
-  .input-group {
-    display: inline-block;
-    position: relative;
-  }
-  input,
-  label {
-    //
-    //    width: 100%;
-    font-family: Georgia, Times, 'Times New Roman', serif;
-    font-size: 1.4em;
-    font-style: italic;
-    font-weight: 500;
-    line-height: 26.4px;
-  }
-  input {
-    width: 40em;
-    max-width: 100%;
-    outline: none;
-    background: transparent;
-    border: none;
-    border-bottom: 2px solid lightgray black;
-    color: gray;
-  }
-  .formTitre {
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    pointer-events: none;
-    font-style: italic;
-    color: #bbb;
-    transition: .2s ease all;
-  }
-  input {
-    &:focus {
-      border-color: cornflowerblue;
-      ~ label {
-        top: 0;
-        font-size: 0.8em;
-        color: deepskyblue;
+    height: auto;
+    overflow: hidden;
+    background: #f9f9f9;
+    .input-group,
+    input,
+    label {
+      //    display: inline-block;
+    }
+    .input-group {
+      position: relative;
+    }
+    input,
+    label {
+      margin: 0 20px;
+      padding: 20px 0;
+      font-family: georgia, arial, sans-serif;
+      font-size: 18px;
+    }
+    input {
+      width: 40em;
+      outline: none;
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid cornflowerblue;
+      color: gray;
+      &[type="submit"] {
+        padding: 20px;
+        width: auto;
+        border: 2px solid cornflowerblue;
+        color: cornflowerblue;
+        cursor: pointer;
+        font-family: tahoma;
+        &:hover,
+        &:focus {
+          background: cornflowerblue;
+          color: white;
+        }
       }
     }
-    &.has-value ~ label {
-      top: 0;
-      font-size: 12px;
-      color: cornflowerblue;
+    label {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      pointer-events: none;
+      font-style: italic;
+      color: lighten( black, 25%);
+      transition: .2s ease all;
+    }
+    input {
+      &:focus {
+        border-color: lightgray;
+        ~ label {
+          top: 0;
+          font-size: 12px;
+          color: cornflowerblue;
+        }
+      }
+      &.has-value ~ label {
+        top: 0;
+        font-size: 12px;
+        color: cornflowerblue;
+      }
+    }
+  }
+  .hide-completed {
+    float: right;
+  }
+  .ckbox {
+    height: 100%;
+    //    padding: 20px;
+    display: inline;
+    label {
+      display: inline-block;
+      width: 100%;
+      background: #fff;
+      padding: 10px 15px;
+      border-top: 1px solid #BBB;
+      &:last-child {
+        border-bottom: 1px solid #BBB;
+      }
+      // Hide the ugly checkbox
+      > input {
+        display: none;
+      }
+      // New beautiful checkbox
+      i {
+        display: inline-block;
+        float: right;
+        padding: 2px;
+        width: 40px;
+        height: 20px;
+        border-radius: 13px;
+        vertical-align: middle;
+        transition: .25s .09s;
+        position: relative;
+        background: #d8d9db;
+        box-sizing: initial;
+        &:after {
+          content: " ";
+          display: block;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          background: #fff;
+          position: absolute;
+          left: 2px;
+          transition: .25s;
+        }
+      }
+      // Checked-state
+      > input:checked + i {
+        background: #4bd865;
+      }
+      > input:checked + i:after {
+        transform: translateX(20px);
+      }
+      // Label-hover
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }
-
