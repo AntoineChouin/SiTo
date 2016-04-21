@@ -1,11 +1,11 @@
 <template name="formTask">
   <div class="row ">
 
-    <div class="col-md-8  ">
+    <section class="col-md-8  ">
       <!--      <h3>Formulaire d'ajout de tâches</h3>-->
       <form class="new-task awesome-form">
         <section class="input-group">
-          <input type="text" class="addTask" />
+          <input type="text" name="text" class="addTask" />
           <label class="formTitre">Insérez votre tâche </label>
 
         </section>
@@ -13,26 +13,23 @@
       </form>
 
 
-    </div>
-    <div class="col-md-4 ckbox">
+    </section>
+    <section class="col-md-4 ckbox ">
       <label class="hide-completed">
-        Masquer les tâches terminées
-        <input type="checkbox" class="checkbox" checked/>
+        Cacher vos tâches terminées
+        <input type="checkbox" />
         <i></i>
       </label>
-<!--
-      <label class="hide-completed">
-        <span class="">
-          <input type="checkbox" class="checkbox" /> Hide Completed Tasks
-       </span>
-
+      
+      <label class="changeColor">
+       Modifier le UI des tâches
+        <input type="checkbox" />
+        <i></i>
       </label>
--->
-
-    </div>
+    </section>
 
 
-
+    
 
   </div>
   <script>

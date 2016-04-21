@@ -13,6 +13,10 @@ Template.body.onCreated(function bodyOnCreated() {
   this.state = new ReactiveDict();
 });
 
+Template.body.onCreated(function bodyOnCreated() {
+  this.state = new ReactiveDict();
+});
+
 Template.body.helpers({
   tasks() {
     const instance = Template.instance();
@@ -38,12 +42,7 @@ Template.body.events({
     const text = target.text.value;
 
     // Insert a task into the collection
-    Tasks.insert({
-      text,
-      createdAt: new Date(), // current time
-       owner: Meteor.userId(),
-      username: Meteor.user().username,
-    });
+    Meteor.call('tasks.insert', text);
 
     // Clear form
     target.text.value = '';

@@ -78,24 +78,21 @@ form {
   position: relative;
 }
 
-//.new-task {
-//  input {
-//    box-sizing: border-box;
-//    padding: 10px 0;
-//    //  background: transparent;
-//    //  border: none;
-//    width: 100%;
-//    //  padding-right: 80px;
-//    font-size: 1em;
-//  }
-//  //  input:focus {
-//  //    outline: 0;
-//  //  }
-//}
 //http://codepen.io/ZheYeti/pen/bpKorQ?editors=1100
 #formtask {
+  width: 100%;
+  background-color: firebrick;
+  height: 10em;
+  float: left ;
+  border:3px solid gold;
+  .hide-completed {
+    float: right;
+  }
+  .awesome-form,
+  .ckbox {}
+  
+  
   .awesome-form {
-    /*   margin:20% auto 0 auto; */
     padding: 20px;
     width: 100%;
     height: auto;
@@ -104,27 +101,36 @@ form {
     .input-group,
     input,
     label {
-      //    display: inline-block;
+      display: inline-block;
     }
     .input-group {
       position: relative;
     }
     input,
     label {
-      margin: 0 20px;
-      padding: 20px 0;
       font-family: georgia, arial, sans-serif;
-      font-size: 18px;
+      font-size: 1.1em;
+    }
+    .formTitre {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      pointer-events: none;
+      font-style: italic;
+      color: lighten( black, 25%);
+      transition: .2s ease all;
     }
     input {
-      width: 40em;
+      padding: 10px 40px;
+//      width: 40em;
       outline: none;
       background: transparent;
       border: none;
       border-bottom: 2px solid cornflowerblue;
       color: gray;
       &[type="submit"] {
-        padding: 20px;
+        //        padding: 20px;
         width: auto;
         border: 2px solid cornflowerblue;
         color: cornflowerblue;
@@ -136,18 +142,6 @@ form {
           color: white;
         }
       }
-    }
-    label {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%);
-      pointer-events: none;
-      font-style: italic;
-      color: lighten( black, 25%);
-      transition: .2s ease all;
-    }
-    input {
       &:focus {
         border-color: lightgray;
         ~ label {
@@ -163,18 +157,12 @@ form {
       }
     }
   }
-  .hide-completed {
-    float: right;
-  }
   .ckbox {
-    height: 100%;
-    //    padding: 20px;
-    display: inline;
     label {
       display: inline-block;
       width: 100%;
       background: #fff;
-      padding: 10px 15px;
+      //      padding: 10px 15px;
       border-top: 1px solid #BBB;
       &:last-child {
         border-bottom: 1px solid #BBB;
@@ -221,4 +209,8 @@ form {
       }
     }
   }
+}
+
+#tasks{
+  
 }

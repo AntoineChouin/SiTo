@@ -1,6 +1,8 @@
 <template name="task">
   <li class="list-group-item {{#if checked}}checked{{/if}}">
-    <button class="delete">&times;</button>
+    <button class="delete">
+      <i class="fa fa-times-circle-o" aria-hidden="true"></i>
+    </button>
 
     <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
 
