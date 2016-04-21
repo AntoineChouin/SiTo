@@ -12,3 +12,22 @@ Template.task.events({
     Meteor.call('tasks.remove', this._id);
   },
 });
+
+Template.task.events({
+  'sumit .addTask': function(event) {
+    // prevent from submission
+   event.preventDefault();
+    
+    //get value
+    var c = event.target.querySelector ('#content').value;
+    
+    //insert into Tasks
+    Message.insert({content: c, date: new Date()});
+    
+    //reset form fields
+    event.target.reset();
+  },
+  'click .delete'() {
+    Meteor.call('tasks.remove', this._id);
+  },
+});

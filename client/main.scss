@@ -94,7 +94,7 @@ form {
   
   .awesome-form {
     padding: 20px;
-    width: 100%;
+    width: 100% !important;
     height: auto;
     overflow: hidden;
     background: #f9f9f9;
@@ -121,7 +121,7 @@ form {
       color: lighten( black, 25%);
       transition: .2s ease all;
     }
-    input {
+    .addTask {
       padding: 10px 40px;
 //      width: 40em;
       outline: none;

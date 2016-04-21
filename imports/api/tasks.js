@@ -18,6 +18,7 @@ Meteor.methods({
       createdAt: new Date(),
       owner: Meteor.userId(),
       username: Meteor.user().username,
+      getDate: moment().format("dddd, MMMM Do YYYY, h:mm:ss a")
     });
   },
   'tasks.remove'(taskId) {

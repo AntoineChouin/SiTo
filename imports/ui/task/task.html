@@ -1,11 +1,11 @@
 <template name="task">
   <li class="list-group-item {{#if checked}}checked{{/if}}">
     <button class="delete">
-      <i class="fa fa-times-circle-o" aria-hidden="true"></i>
+      <i class="fa fa-lg fa-times-circle-o" aria-hidden="true"></i>
     </button>
 
     <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
 
-    <span class="text"><strong>{{username}}</strong> - {{text}}</span>
+    <span class="text"><strong>{{username}}</strong> - {{text}} - {{getDate}}</span>
   </li>
 </template>
