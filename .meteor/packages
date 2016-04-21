@@ -30,3 +30,4 @@ useraccounts:bootstrap
 natestrauser:font-awesome
 accounts-facebook
 service-configuration
+momentjs:moment
